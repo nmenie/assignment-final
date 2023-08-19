@@ -1,0 +1,50 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Transaction Details</title>
+    <link rel="stylesheet" href="/css/transaction-details.css"/>
+    <style>
+        .transaction-details {
+            margin-left: 20px;
+        }
+        
+        .transaction-details table {
+            margin-bottom: 10px;
+        }
+        
+        .transaction-details th {
+            text-align: left;
+        }
+        
+        .transaction-id {
+            margin-bottom: 10px;
+            
+        }
+        
+         .transaction-date {
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+    <h2>Transaction Details</h2>
+    <div class="transaction-details">
+        <table>
+            <tr>
+                <th>
+                    <div class="transaction-id">
+                        TRANSACTION ID: <span th:text="${transaction.id}"></span>(<span th:text="${transaction.type}"></span>)
+                    </div>
+                    date: <span th:text="${transaction.date}"></span>
+                </th>
+            </tr>
+            <tr>
+                <td>amount: <span th:text="${transaction.amount}"></span></td>
+            </tr>
+            <tr>
+                <td>description: <span th:text="${transaction.description}"></span></td>
+            </tr>
+        </table>
+    </div>
+    <a href="/transactions" class="back-button">Back</a>
+</body>
+</html>
